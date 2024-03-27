@@ -3,9 +3,13 @@ import { View, Text, StyleSheet, Image, ScrollView, TouchableOpacity } from 'rea
 
 import styles from './Styles';
 import { RoundedButton } from '../../components/RoundedButton';
+import { StackScreenProps } from '@react-navigation/stack';
+import { RootStackParamsList } from '../../navigator/MainAppStack';
+
+interface Props extends StackScreenProps<RootStackParamsList, 'LoginScreen'> { }
 
 
-const LoginScreen = () => {
+const LoginScreen = ({ navigation, route }: Props) => {
   return (
     <View style={styles.container}>
       <Image
@@ -40,12 +44,11 @@ const LoginScreen = () => {
             <View style={styles.formLogin}>
               <Text style={{ fontWeight: '500' }}>No tienes cuenta?</Text>
               <TouchableOpacity
-                onPress={() => console.log('Register')}
+                onPress={() => navigation.navigate('RegisterScreen')}
               >
                 <Text style={styles.formRegisterText}>Registrate</Text>
               </TouchableOpacity>
             </View>
-
           </View>
         </ScrollView>
       </View>

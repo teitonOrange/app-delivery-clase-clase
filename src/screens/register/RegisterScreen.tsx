@@ -6,8 +6,11 @@ import { RoundedButton } from '../../components/RoundedButton'
 import { ImageButton } from '../../components/ImageButton';
 
 import styles from './Styles';
+import { StackScreenProps } from '@react-navigation/stack';
+import { RootStackParamsList } from '../../navigator/MainAppStack';
 
-export const RegisterScreen = () => {
+interface Props extends StackScreenProps<RootStackParamsList, 'RegisterScreen'> { }
+export const RegisterScreen = ({ navigation, route }: Props) => {
 
     return (
         <View style={styles.container}>
@@ -19,7 +22,7 @@ export const RegisterScreen = () => {
             <View style={{ top: '1%', left: '3%', position: 'absolute', marginTop: 35 }}>
                 <ImageButton
                     text='back'
-                    onPress={() => console.log('back to login screen')}
+                    onPress={() => navigation.goBack()}
                 />
             </View>
 
