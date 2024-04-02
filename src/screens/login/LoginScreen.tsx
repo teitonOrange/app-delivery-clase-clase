@@ -6,10 +6,11 @@ import { RoundedButton } from '../../components/RoundedButton';
 import { StackScreenProps } from '@react-navigation/stack';
 import { RootStackParamsList } from '../../navigator/MainAppStack';
 
-interface Props extends StackScreenProps<RootStackParamsList, 'LoginScreen'> { }
 
+interface Props extends StackScreenProps<RootStackParamsList, 'Login'> { }
 
 const LoginScreen = ({ navigation, route }: Props) => {
+
   return (
     <View style={styles.container}>
       <Image
@@ -44,11 +45,13 @@ const LoginScreen = ({ navigation, route }: Props) => {
             <View style={styles.formLogin}>
               <Text style={{ fontWeight: '500' }}>No tienes cuenta?</Text>
               <TouchableOpacity
-                onPress={() => navigation.navigate('RegisterScreen')}
+                activeOpacity={0.6}
+                onPress={() => navigation.navigate('Register')}
               >
                 <Text style={styles.formRegisterText}>Registrate</Text>
               </TouchableOpacity>
             </View>
+
           </View>
         </ScrollView>
       </View>

@@ -9,8 +9,9 @@ import styles from './Styles';
 import { StackScreenProps } from '@react-navigation/stack';
 import { RootStackParamsList } from '../../navigator/MainAppStack';
 
-interface Props extends StackScreenProps<RootStackParamsList, 'RegisterScreen'> { }
-export const RegisterScreen = ({ navigation, route }: Props) => {
+interface Props extends StackScreenProps<RootStackParamsList, 'Register'> {}
+
+export const RegisterScreen = ({navigation, route}:Props) => {
 
     return (
         <View style={styles.container}>
@@ -22,7 +23,7 @@ export const RegisterScreen = ({ navigation, route }: Props) => {
             <View style={{ top: '1%', left: '3%', position: 'absolute', marginTop: 35 }}>
                 <ImageButton
                     text='back'
-                    onPress={() => navigation.goBack()}
+                    onPress={() => navigation.navigate('Login')}
                 />
             </View>
 
